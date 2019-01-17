@@ -16,7 +16,7 @@ namespace HuanL\SSH2;
  * Class shell
  * @package HuanL\SSH2
  */
-class shell {
+class shell implements ShellInterface {
     protected $ssh;
 
     protected $io;
@@ -50,4 +50,5 @@ class shell {
     public function blocking($mode) {
         return stream_set_blocking($this->io, $mode);
     }
+
 }

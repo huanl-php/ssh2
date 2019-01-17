@@ -55,7 +55,7 @@ class ssh {
      * @return bool
      */
     public function login_pubkey($user, $publicFile, $privateFile) {
-        return ssh2_auth_pubkey_file($this->ssh, $user, $publicFile, $privateFile);
+        return @ssh2_auth_pubkey_file($this->ssh, $user, $publicFile, $privateFile);
     }
 
     /**
@@ -78,7 +78,6 @@ class ssh {
     public function create_shell($term_type = 'vanilla', $env = [], $width = 80, $height = 25, $width_height_type = SSH2_TERM_UNIT_CHARS) {
         return new shell($this->ssh, $term_type, $env, $width, $height, $width_height_type);
     }
-
 
     public function exec($command) {
         return new exec($this->ssh, $command);

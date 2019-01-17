@@ -16,7 +16,7 @@ namespace HuanL\SSH2;
  * Class exec
  * @package HuanL\SSH2
  */
-class exec {
+class exec implements ShellInterface {
     protected $ssh;
 
     protected $io;
